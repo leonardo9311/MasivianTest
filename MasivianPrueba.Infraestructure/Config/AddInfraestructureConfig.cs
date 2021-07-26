@@ -1,26 +1,30 @@
 ﻿using MasivianPrueba.Core.Entitiy;
 using MasivianPrueba.Core.Interface.Repository;
 using MasivianPrueba.Core.Interface.Service;
+using MasivianPrueba.Infraestructure.Data;
 using MasivianPrueba.Infraestructure.Repository;
 using MasivianPrueba.Infraestructure.Service;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MasivianPrueba.Infraestructure.Config
 {
     public static class AddInfraestructureConfig
     {
-        public static void AddInfraestructure(this IServiceCollection services, IConfiguration configuration)
+        public static void AddInfraestructure(this IServiceCollection services, IConfiguration Configuration)
         {
+            #region dbContext
+            services.AddDbContext<AppDbContext>(options =>
+                   options.UseSqlServer(
+                       Configuration.GetConnectionString("MasivianConnection"),
+                       b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));
+            #endregion dbContext
             #region Data
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IRepository<Roulette>, IRepository<Roulette>>();
-            services.AddTransient<IRepository<Bet>, IRepository<Bet>>();
+            services.AddTransient<IRepository<Roulette>, Repository<Roulette>>();
+            services.AddTransient<IRepository<Bet>, Repository<Bet>>();
 
             #endregion Data
             #region Services

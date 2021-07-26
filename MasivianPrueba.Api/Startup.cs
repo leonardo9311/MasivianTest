@@ -1,3 +1,4 @@
+using MasivianPrueba.Infraestructure.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace MasivianPrueba.Api
         {
 
             services.AddControllers();
+            services.AddInfraestructure(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MasivianPrueba.Api", Version = "v1" });
