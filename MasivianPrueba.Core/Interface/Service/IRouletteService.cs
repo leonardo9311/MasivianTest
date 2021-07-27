@@ -9,9 +9,9 @@ namespace MasivianPrueba.Core.Interface.Service
 {
     public interface IRouletteService
     {
-        int CreateRoulette();
-        bool OpenRoulette(int idRoulette);
-        Task BetRoulettte(BetDto betDto);
-        List<BetDto> CloseRoulette(int idRoulette);
+        int CreateRoulette();       
+        Task<bool> OpenRoulette(int idRoulette);
+        bool BetRoulettte(string idUser,BetDto betDto);
+        Task<List<BetResultDto>> CloseRoulette(int idRoulette);
     }
 }

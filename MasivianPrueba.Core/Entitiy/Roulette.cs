@@ -10,7 +10,7 @@ namespace MasivianPrueba.Core.Entitiy
     public class Roulette : BaseEntity
     {
        public bool isOpen { get; set; }
-       [JsonIgnore]
-       public ICollection<Bet> idBets { get; set; }
+        [JsonIgnore]
+        public ICollection<Bet> bets { get; set; }
     }
 }

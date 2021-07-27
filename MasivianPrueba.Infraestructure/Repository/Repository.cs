@@ -1,5 +1,7 @@
-﻿using MasivianPrueba.Core.Interface.Repository;
+﻿using MasivianPrueba.Core.Entitiy;
+using MasivianPrueba.Core.Interface.Repository;
 using MasivianPrueba.Infraestructure.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MasivianPrueba.Infraestructure.Repository
 {
-    public  class Repository<T> : IRepository<T> where T: class
+    public  class Repository<T> : IRepository<T> where T: BaseEntity
     {
         private readonly AppDbContext _dbContext;
         public Repository(AppDbContext dbContext)
@@ -15,11 +17,10 @@ namespace MasivianPrueba.Infraestructure.Repository
             _dbContext = dbContext;
 
         }
-        public async Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
+        public  T Create(T entity)
         {
-            await _dbContext.Set<T>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
-
+             _dbContext.Set<T>().Add(entity);
+             _dbContext.SaveChanges();
             return entity;
         }
         public async Task<List<T>> AddRange(List<T> Listentity, CancellationToken cancellationToken = default)
