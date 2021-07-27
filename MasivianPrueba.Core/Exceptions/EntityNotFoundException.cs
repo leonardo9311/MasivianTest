@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MasivianPrueba.Core.Exceptions
 {
+    [Serializable]
     public class EntityNotFoundException : Exception
     {
         public EntityNotFoundException() { }
@@ -16,6 +17,11 @@ namespace MasivianPrueba.Core.Exceptions
         public EntityNotFoundException(string name, object key)
             : base($"Entity \"{name}\" ({key}) was not found.")
         {
+        }
+
+        protected EntityNotFoundException(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+        {
+           
         }
     }
 }

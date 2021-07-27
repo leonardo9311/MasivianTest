@@ -35,9 +35,9 @@ namespace MasivianPrueba.Api.Controllers
             return Ok(_rouletteService.BetRoulettte(idUser,betDtp));
         }
         [HttpPost("CloseRoulette")]
-        public IActionResult CloseRoulette(int idRoulette)
+        public async Task<IActionResult> CloseRoulette(int idRoulette)
         {
-            return Ok( _rouletteService.CloseRoulette(idRoulette));
+            return Ok(await _rouletteService.CloseRoulette(idRoulette));
         }
 
     }

@@ -54,16 +54,17 @@ namespace MasivianPrueba.Infraestructure.Service
                 roulette.isOpen = false;
                 await _unitOfWork._rouletteRepository.UpdateAsync(roulette);
                 var winnerNumber = BetHelper.RandomNumber();
-                var winnerBets= roulette.bets.Where(b=>b.number==winnerNumber).ToList();
+                var winnerBets= _unitOfWork._betRepository.GetAll().Where(b=>b.number==winnerNumber).ToList();
                 bool isEvenNumber = BetHelper.isEvenNumber(winnerNumber);
                 var winners = winnerBets.Select(wb => new BetResultDto
                 {
                     amountbet = wb.amount,
                     earnedAmount = wb.amount * (isEvenNumber ? Constants.evenNumberEarnFactor : Constants.oddNumberEarnFactor),
                     idBet=wb.Id,
-                    isEvenNumber=isEvenNumber,
-                  
+                    idUser=wb.idUser,
+                    isEvenNumber=isEvenNumber                  
                 }) ;
+                return winners.ToList();
             }
             return new List<BetResultDto>();
         }

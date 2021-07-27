@@ -19,7 +19,7 @@ namespace MasivianPrueba.Infraestructure.Data
                 b.Property(u=>u.idUser).HasColumnName("IdUser");
                 b.Property(u => u.number).HasColumnName("Number");
                 b.Property(u => u.idRoullette).HasColumnName("IdRoulette");
-                //b.HasOne(br=>br.Roulette).WithMany(r=>r.idBets).HasForeignKey(br=>br.idRoullette);
+                b.HasOne(br=>br.Roulette).WithMany(r=>r.bets).HasForeignKey(br=>br.idRoullette);
                 b.Ignore(u=>u.Roulette);
                 b.ToTable("Bet");
             });
@@ -27,7 +27,7 @@ namespace MasivianPrueba.Infraestructure.Data
                 b.HasKey(u => u.Id);
                 b.Property(u=>u.isOpen).HasColumnName("IsOpen");
                 
-                //b.Ignore(u => u.idBets);
+                b.Ignore(u => u.bets);
                 b.ToTable("Roulette");
             });
 
