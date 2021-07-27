@@ -18,21 +18,22 @@ namespace MasivianPrueba.Infraestructure.Repository
 
         }
         public  T Create(T entity)
-        {
+        {            
              _dbContext.Set<T>().Add(entity);
-             _dbContext.SaveChanges();
+             _dbContext.SaveChanges();          
+            
             return entity;
         }
         public async Task<List<T>> AddRange(List<T> Listentity, CancellationToken cancellationToken = default)
         {
             await _dbContext.Set<T>().AddRangeAsync(Listentity);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(cancellationToken);
             return Listentity;
         }
         public Task DeleteAsync(T entity, CancellationToken cancellationToken = default)
         {
             _dbContext.Set<T>().Remove(entity);
-            return _dbContext.SaveChangesAsync();
+            return _dbContext.SaveChangesAsync(cancellationToken);
         }
         public T GetById(int id)
         {
@@ -49,12 +50,12 @@ namespace MasivianPrueba.Infraestructure.Repository
         public Task UpdateAsync(T entity, CancellationToken cancellationToken = default)
         {
             _dbContext.Set<T>().Update(entity);
-            return _dbContext.SaveChangesAsync();
+            return _dbContext.SaveChangesAsync(cancellationToken);
         }
         public async Task UpdateRange(List<T> Listentity, CancellationToken cancellationToken = default)
         {
             _dbContext.Set<T>().UpdateRange(Listentity);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync(cancellationToken);
         }
     }
 }
