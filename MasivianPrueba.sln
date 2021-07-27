@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7A845387-643
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{31F63A25-209F-4D80-BA14-C7A6D709EF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasivianPrueba.Api", "MasivianPrueba.Api\MasivianPrueba.Api.csproj", "{1BFAA72F-43E8-4F65-B48C-5213E4198590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasivianPrueba.Api", "MasivianPrueba.Api\MasivianPrueba.Api.csproj", "{1BFAA72F-43E8-4F65-B48C-5213E4198590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasivianPrueba.Core", "MasivianPrueba.Core\MasivianPrueba.Core.csproj", "{4F49B1D5-7776-49E5-BB9E-AAAFA6A734FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasivianPrueba.Core", "MasivianPrueba.Core\MasivianPrueba.Core.csproj", "{4F49B1D5-7776-49E5-BB9E-AAAFA6A734FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasivianPrueba.Infraestructure", "MasivianPrueba.Infraestructure\MasivianPrueba.Infraestructure.csproj", "{40A8EA0D-B22D-480B-BCA9-E0D314A29D3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasivianPrueba.Infraestructure", "MasivianPrueba.Infraestructure\MasivianPrueba.Infraestructure.csproj", "{40A8EA0D-B22D-480B-BCA9-E0D314A29D3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasivianPrueba.UnitTest", "MasivianPrueba.UnitTest\MasivianPrueba.UnitTest.csproj", "{32D5E66E-451D-4498-80E1-B009419CDFD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasivianPrueba.UnitTest", "MasivianPrueba.UnitTest\MasivianPrueba.UnitTest.csproj", "{32D5E66E-451D-4498-80E1-B009419CDFD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasivianPrueba.IntegrationTest", "MasivianPrueba.IntegrationTest\MasivianPrueba.IntegrationTest.csproj", "{270D236A-1A40-4D2C-ABEB-E0C29D486358}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{32D5E66E-451D-4498-80E1-B009419CDFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32D5E66E-451D-4498-80E1-B009419CDFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32D5E66E-451D-4498-80E1-B009419CDFD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270D236A-1A40-4D2C-ABEB-E0C29D486358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270D236A-1A40-4D2C-ABEB-E0C29D486358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270D236A-1A40-4D2C-ABEB-E0C29D486358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270D236A-1A40-4D2C-ABEB-E0C29D486358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{4F49B1D5-7776-49E5-BB9E-AAAFA6A734FB} = {7A845387-6430-49EF-BF4D-4AE690389D3E}
 		{40A8EA0D-B22D-480B-BCA9-E0D314A29D3C} = {7A845387-6430-49EF-BF4D-4AE690389D3E}
 		{32D5E66E-451D-4498-80E1-B009419CDFD3} = {31F63A25-209F-4D80-BA14-C7A6D709EF82}
+		{270D236A-1A40-4D2C-ABEB-E0C29D486358} = {31F63A25-209F-4D80-BA14-C7A6D709EF82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {054CD563-FF71-45C7-9FAE-23BF4FAE1C6A}
